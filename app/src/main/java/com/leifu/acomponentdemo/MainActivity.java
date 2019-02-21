@@ -3,8 +3,7 @@ package com.leifu.acomponentdemo;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.leifu.acomponentdemo.di.component.DaggerActivityComponent;
-import com.leifu.acomponentdemo.di.module.ActivityModule;
+import com.leifu.acomponentdemo.di.DaggerUtils;
 import com.leifu.acomponentdemo.presenter.MainPresenter;
 import com.leifu.acomponentdemo.presenter.contract.MainContract;
 import com.leifu.commonlib.ARouteConstants;
@@ -12,8 +11,6 @@ import com.leifu.commonlib.base.BaseBean;
 import com.leifu.commonlib.base.MVPActivity;
 
 public class MainActivity extends MVPActivity<MainPresenter> implements MainContract.View {
-
-
     @Override
     public void showContent(BaseBean baseBean) {
 
@@ -21,11 +18,7 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
 
     @Override
     protected void initInject() {
-        DaggerActivityComponent.builder()
-                .appComponent(App.getAppComponent())
-                .activityModule(new ActivityModule(this))
-                .build()
-                .inject(this);
+        DaggerUtils.getActivityComponent(this).inject(this);
     }
 
     @Override
