@@ -4,6 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.leifu.commonlib.di.component.AppComponent;
+import com.leifu.commonlib.di.component.DaggerAppComponent;
+import com.leifu.commonlib.di.module.AppModule;
+import com.leifu.commonlib.di.module.HttpModule;
+
 
 /**
  * 创建人: 雷富
@@ -13,7 +18,7 @@ import android.support.multidex.MultiDex;
 
 public class BaseApplication extends Application {
     private static BaseApplication instance;
-//    private static AppComponent appComponent;
+    private static AppComponent appComponent;
 
 //    //static 代码段可以防止内存泄露
 //    static {
@@ -81,16 +86,15 @@ public class BaseApplication extends Application {
 //        Beta.installTinker();
     }
 
-//    public static AppComponent getAppComponent() {
-//
-//        if (appComponent == null) {
-//            appComponent = DaggerAppComponent.builder()
-//                    .appModule(new AppModule(instance))
-//                    .httpModule(new HttpModule())
-//                    .build();
-//        }
-//        return appComponent;
-//    }
+    public static AppComponent getAppComponent() {
+        if (appComponent == null) {
+            appComponent = DaggerAppComponent.builder()
+                    .appModule(new AppModule(BaseApplication.getInstance()))
+                    .httpModule(new HttpModule())
+                    .build();
+        }
+        return appComponent;
+    }
 
 
     public static synchronized BaseApplication getInstance() {

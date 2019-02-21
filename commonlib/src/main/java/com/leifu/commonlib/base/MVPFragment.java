@@ -14,7 +14,7 @@ import javax.inject.Inject;
  * 创建时间:2018/7/30 17:38
  * 描述: MVP Fragment基类
  */
-public abstract class BaseMVPFragment<T extends BasePresenter> extends BaseFragment implements BaseView {
+public abstract class MVPFragment<T extends BasePresenter> extends BaseFragment implements BaseView {
 
     @Inject
     protected T mPresenter;

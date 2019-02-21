@@ -11,7 +11,7 @@ import javax.inject.Inject;
  * 创建时间:2018/7/30 17:38
  * 描述:MVP activity基类
  */
-public abstract class BaseMVPActivity<T extends BasePresenter> extends BaseActivity implements BaseView {
+public abstract class MVPActivity<T extends BasePresenter> extends BaseActivity implements BaseView {
 
     @Inject
     protected T mPresenter;

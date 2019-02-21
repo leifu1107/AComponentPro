@@ -19,6 +19,7 @@ android {
         //添加了javaCompileOptions  防止注解框架报错
         javaCompileOptions {
             annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
                 includeCompileClasspath = true
             }
         }
@@ -76,6 +77,9 @@ dependencies {
     api rootProject.ext.dependencies["dagger2-android"]
     api rootProject.ext.dependencies["dagger2-android-support"]
     annotationProcessor  rootProject.ext.dependencies["dagger2-android-processor"]
+
+    api rootProject.ext.dependencies["arouter"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 
     api rootProject.ext.dependencies["eventbus"]
     api rootProject.ext.dependencies["gson"]

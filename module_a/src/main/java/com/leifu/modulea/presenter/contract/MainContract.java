@@ -1,4 +1,4 @@
-package com.leifu.acomponentdemo;
+package com.leifu.modulea.presenter.contract;
 
 import com.leifu.commonlib.base.BaseBean;
 import com.leifu.commonlib.base.BasePresenter;

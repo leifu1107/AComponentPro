@@ -11,9 +11,9 @@ import io.reactivex.Flowable;
  */
 
 public class RetrofitHelper {
-    private MyApis api;
+    private Apis api;
 
-    public RetrofitHelper(MyApis api) {
+    public RetrofitHelper(Apis api) {
         this.api = api;
     }
 

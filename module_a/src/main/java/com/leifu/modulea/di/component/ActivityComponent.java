@@ -1,11 +1,11 @@
-package com.leifu.acomponentdemo.di.component;
+package com.leifu.modulea.di.component;
 
 import android.app.Activity;
 
-import com.leifu.acomponentdemo.MainActivity;
-import com.leifu.acomponentdemo.di.module.ActivityModule;
 import com.leifu.commonlib.di.component.AppComponent;
 import com.leifu.commonlib.di.scope.ActivityScope;
+import com.leifu.modulea.MainActivity;
+import com.leifu.modulea.di.module.ActivityModule;
 
 import dagger.Component;
 

@@ -1,10 +1,10 @@
-package com.leifu.acomponentdemo.di.component;
+package com.leifu.modulea.di.component;
 
 import android.app.Activity;
 
-import com.leifu.acomponentdemo.di.module.FragmentModule;
 import com.leifu.commonlib.di.component.AppComponent;
 import com.leifu.commonlib.di.scope.FragmentScope;
+import com.leifu.modulea.di.module.FragmentModule;
 
 import dagger.Component;
 

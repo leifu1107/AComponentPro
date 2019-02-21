@@ -3,7 +3,7 @@ package com.leifu.commonlib.di.module;
 
 import com.leifu.commonlib.BuildConfig;
 import com.leifu.commonlib.Constants;
-import com.leifu.commonlib.http.MyApis;
+import com.leifu.commonlib.http.Apis;
 import com.leifu.commonlib.http.RetrofitHelper;
 import com.leifu.commonlib.utils.Logger;
 import com.leifu.commonlib.utils.SystemUtils;
@@ -53,13 +53,13 @@ public class HttpModule {
     @Singleton
     @Provides
     Retrofit provideZhiHuRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        return createRetrofit(builder, client, MyApis.HOST);
+        return createRetrofit(builder, client, Apis.HOST);
     }
 
     @Singleton
     @Provides
-    MyApis provideZhiHuService(Retrofit retrofit) {
-        return retrofit.create(MyApis.class);
+    Apis provideZhiHuService(Retrofit retrofit) {
+        return retrofit.create(Apis.class);
     }
 
     private Retrofit createRetrofit(Retrofit.Builder builder, OkHttpClient client, String url) {
@@ -152,7 +152,7 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    RetrofitHelper provideRetrofitHelper(MyApis api) {
+    RetrofitHelper provideRetrofitHelper(Apis api) {
         return new RetrofitHelper(api);
     }
 }

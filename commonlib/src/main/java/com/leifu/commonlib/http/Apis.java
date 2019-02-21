@@ -12,7 +12,7 @@ import retrofit2.http.GET;
  * 描述:
  */
 
-public interface MyApis {
+public interface Apis {
     String HOST = "https://news-at.zhihu.com/";//正式环境
 
     //https://news-at.zhihu.com/api/4/news/latest
