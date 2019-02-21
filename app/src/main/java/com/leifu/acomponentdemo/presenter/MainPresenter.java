@@ -5,7 +5,7 @@ import com.leifu.commonlib.base.BaseBean;
 import com.leifu.commonlib.base.RxPresenter;
 import com.leifu.commonlib.base.RxUtil;
 import com.leifu.commonlib.exception.CommonSubscriber;
-import com.leifu.commonlib.http.RetrofitHelper;
+import com.leifu.commonlib.apis.Api;
 
 import javax.inject.Inject;
 
@@ -15,10 +15,10 @@ import javax.inject.Inject;
  * 描述:
  */
 public class MainPresenter extends RxPresenter<MainContract.View> implements MainContract.Presenter {
-    private RetrofitHelper retrofitHelper;
+    private Api retrofitHelper;
 
     @Inject
-    public MainPresenter(RetrofitHelper retrofitHelper) {
+    public MainPresenter(Api retrofitHelper) {
         this.retrofitHelper = retrofitHelper;
     }
 

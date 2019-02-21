@@ -3,8 +3,10 @@ package com.leifu.commonlib.di.module;
 
 import com.leifu.commonlib.BuildConfig;
 import com.leifu.commonlib.Constants;
-import com.leifu.commonlib.http.Apis;
-import com.leifu.commonlib.http.RetrofitHelper;
+import com.leifu.commonlib.apis.Api;
+import com.leifu.commonlib.apis.OtherApi;
+import com.leifu.commonlib.di.qualifier.ApiUrl;
+import com.leifu.commonlib.di.qualifier.OtherApisUrl;
 import com.leifu.commonlib.utils.Logger;
 import com.leifu.commonlib.utils.SystemUtils;
 
@@ -50,16 +52,44 @@ public class HttpModule {
         return new OkHttpClient.Builder();
     }
 
+    /**
+     * 自己项目的api Retrofit
+     *
+     * @param builder
+     * @param client
+     * @return
+     */
     @Singleton
     @Provides
-    Retrofit provideZhiHuRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        return createRetrofit(builder, client, Apis.HOST);
+    @ApiUrl
+    Retrofit provideApiRetrofit(Retrofit.Builder builder, OkHttpClient client) {
+        return createRetrofit(builder, client, Api.HOST);
+    }
+
+    /**
+     * 第三方项目的api Retrofit
+     *
+     * @param builder
+     * @param client
+     * @return
+     */
+    @Singleton
+    @Provides
+    @OtherApisUrl
+    Retrofit provideOtherApiRetrofit(Retrofit.Builder builder, OkHttpClient client) {
+        return createRetrofit(builder, client, OtherApi.HOST);
     }
 
     @Singleton
     @Provides
-    Apis provideZhiHuService(Retrofit retrofit) {
-        return retrofit.create(Apis.class);
+    Api provideApiService(@ApiUrl Retrofit retrofit) {
+        return retrofit.create(Api.class);
+    }
+
+    @Singleton
+    @Provides
+    OtherApi provideOtherApiService(@OtherApisUrl Retrofit retrofit) {
+        return retrofit.create(OtherApi.class);
     }
 
     private Retrofit createRetrofit(Retrofit.Builder builder, OkHttpClient client, String url) {
@@ -150,9 +180,9 @@ public class HttpModule {
         return builder.build();
     }
 
-    @Singleton
-    @Provides
-    RetrofitHelper provideRetrofitHelper(Apis api) {
-        return new RetrofitHelper(api);
-    }
+//    @Singleton
+//    @Provides
+//    RetrofitHelper provideRetrofitHelper(Api api) {
+//        return new RetrofitHelper(api);
+//    }
 }

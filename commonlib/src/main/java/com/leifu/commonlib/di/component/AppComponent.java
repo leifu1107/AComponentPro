@@ -1,11 +1,10 @@
 package com.leifu.commonlib.di.component;
 
 
+import com.leifu.commonlib.apis.Api;
 import com.leifu.commonlib.app.BaseApplication;
 import com.leifu.commonlib.di.module.AppModule;
 import com.leifu.commonlib.di.module.HttpModule;
-import com.leifu.commonlib.http.Apis;
-import com.leifu.commonlib.http.RetrofitHelper;
 
 import javax.inject.Singleton;
 
@@ -21,7 +20,7 @@ import dagger.Component;
 public interface AppComponent {
     BaseApplication getContext();  // 提供App的Context
 
-    RetrofitHelper getRetrofitHelper();
+//    RetrofitHelper getRetrofitHelper();
 
-    Apis getApis();
+    Api getApis();
 }
