@@ -8,7 +8,7 @@ import com.leifu.commonlib.apis.OtherApi;
 import com.leifu.commonlib.di.qualifier.ApiUrl;
 import com.leifu.commonlib.di.qualifier.OtherApisUrl;
 import com.leifu.commonlib.utils.Logger;
-import com.leifu.commonlib.utils.SystemUtils;
+import com.leifu.commonlib.utils.NetworkUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -111,14 +111,14 @@ public class HttpModule {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request();
-                if (!SystemUtils.isNetworkConnected()) {
+                if (!NetworkUtils.isConnected()) {
                     request = request.newBuilder()
                             .cacheControl(CacheControl.FORCE_CACHE)
                             .build();
                 }
                 Response response = chain.proceed(request);
 
-                if (SystemUtils.isNetworkConnected()) {
+                if (NetworkUtils.isConnected()) {
                     int maxAge = 0;
                     // 有网络时, 不缓存, 最大保存时长为0
                     response.newBuilder()

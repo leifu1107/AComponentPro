@@ -2,8 +2,8 @@ package com.leifu.commonlib.exception;
 
 
 import com.leifu.commonlib.base.BaseView;
-import com.leifu.commonlib.utils.Logger;
-import com.leifu.commonlib.utils.SystemUtils;
+import com.leifu.commonlib.utils.NetworkUtils;
+import com.leifu.commonlib.view.dialog.LoadingUtil;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -40,7 +40,7 @@ public abstract class CommonSubscriber<T> extends ResourceSubscriber<T> {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SystemUtils.isNetworkConnected()) {
+        if (!NetworkUtils.isConnected()) {
 //            mView.showErrorMsg("当前网络不可用，请检查网络情况");
             onError(new NetworkException("当前网络不可用\n请检查网络设置"));
             if (!isDisposed()) {
@@ -56,25 +56,21 @@ public abstract class CommonSubscriber<T> extends ResourceSubscriber<T> {
 
     @Override
     public void onComplete() {
-        Logger.e("OkHttp" + "************************onComplete");
         if (showLoading) {
-//            ProgressDialogUtil.stopWaitDialog();
+            LoadingUtil.dismissLoading();
         }
-
     }
 
     @Override
     public void onError(Throwable e) {
         if (showLoading) {
-//            ProgressDialogUtil.stopWaitDialog();
+            LoadingUtil.dismissLoading();
         }
-        Logger.e("OkHttp:_______________presenter所有的错误响应e.toString()_______________  " + e.toString());
         if (mView == null)
             return;
         if (e instanceof ApiException) {
             ApiException apiException = (ApiException) e;
-            if (apiException.getError().equals("ERROR_AUTHORITY_TOKEN_NOT_EXIST") || apiException.getError().equals("ERROR_AUTHORITY_NEED_AUTH") || (apiException.getError()
-                    .equals("ERROR_AUTHORITY_PRINCIPAL_CHECK") || "无效的请求".equals(e.getMessage()))) {
+            if (apiException.getError().equals("ERROR_AUTHORITY_TOKEN_NOT_EXIST")) {
                 mView.showErrorMsg("请重新登录");
 //                mView.goLogin();
                 return;
@@ -99,7 +95,7 @@ public abstract class CommonSubscriber<T> extends ResourceSubscriber<T> {
             mView.showErrorMsg("服务器连接失败");
         } else {
             mView.showErrorMsg("未知错误");
-//            CrashReport.postCatchedException(e);
+//            CrashReport.postCatchedException(e);//第三方bug收集
         }
     }
 }

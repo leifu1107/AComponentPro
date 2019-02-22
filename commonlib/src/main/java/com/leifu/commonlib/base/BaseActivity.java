@@ -2,7 +2,6 @@ package com.leifu.commonlib.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MotionEvent;
@@ -74,19 +73,6 @@ public abstract class BaseActivity extends SupportActivity {
 
     }
 
-
-    public void mStartActivity(Class<?> intentActivity) {
-        Intent intent = new Intent(mContext, intentActivity);
-        super.startActivity(intent);
-    }
-
-    public void mStartActivity(Class<?> intentActivity, Bundle bundle) {
-        Intent intent = new Intent(mContext, intentActivity);
-        if (null != bundle) {
-            intent.putExtras(bundle);
-        }
-        super.startActivity(intent);
-    }
 
     protected abstract int getLayout();
 

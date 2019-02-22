@@ -2,6 +2,7 @@ package com.leifu.commonlib.base;
 
 
 import com.leifu.commonlib.utils.ToastUtil;
+import com.leifu.commonlib.view.dialog.LoadingUtil;
 
 import javax.inject.Inject;
 
@@ -51,6 +52,7 @@ public abstract class MVPActivity<T extends BasePresenter> extends BaseActivity 
 
     @Override
     public void stateLoading(String message) {
+        LoadingUtil.showLoading(mActivity, message);
     }
 
 

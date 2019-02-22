@@ -56,7 +56,7 @@ public abstract class MVPFragment<T extends BasePresenter> extends BaseFragment 
 
     @Override
     public void stateLoading(String message) {
-//        ProgressDialogUtil.showWaitDialog(mActivity, message);
+//        LoadingUtil.showWaitDialog(mActivity, message);
     }
 
 

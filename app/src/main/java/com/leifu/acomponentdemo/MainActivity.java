@@ -1,6 +1,6 @@
 package com.leifu.acomponentdemo;
 
-import android.view.View;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.leifu.acomponentdemo.di.DaggerUtils;
@@ -8,9 +8,17 @@ import com.leifu.acomponentdemo.presenter.MainPresenter;
 import com.leifu.acomponentdemo.presenter.contract.MainContract;
 import com.leifu.commonlib.ARouteConstants;
 import com.leifu.commonlib.base.BaseBean;
-import com.leifu.commonlib.base.MVPActivity;
+import com.leifu.commonlib.base.RootActivity;
 
-public class MainActivity extends MVPActivity<MainPresenter> implements MainContract.View {
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View {
+
+
+    @BindView(R.id.btnGoModuleA)
+    TextView mBtnGoModuleA;
+
     @Override
     public void showContent(BaseBean baseBean) {
 
@@ -28,14 +36,13 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
 
     @Override
     protected void initEventAndData() {
-
+        super.initEventAndData();
         mPresenter.getDatas();
-        findViewById(R.id.btnGoModuleA).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build(ARouteConstants.A_MainActivity).navigation();
-            }
-        });
     }
 
+
+    @OnClick(R.id.btnGoModuleA)
+    public void onViewClicked() {
+        ARouter.getInstance().build(ARouteConstants.A_MainActivity).navigation();
+    }
 }
