@@ -17,7 +17,7 @@ import com.leifu.commonlib.app.BaseApplication;
  */
 public class ToastUtil {
 
-    static ToastUtil td;
+    public static ToastUtil td;
 
     public static void show(int resId) {
         show(BaseApplication.getInstance().getString(resId));

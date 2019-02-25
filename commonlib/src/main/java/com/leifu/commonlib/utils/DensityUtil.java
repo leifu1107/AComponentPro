@@ -12,7 +12,6 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.leifu.commonlib.app.BaseApplication;
@@ -161,38 +160,5 @@ public class DensityUtil {
         return metrics;
     }
 
-    /**
-     * 获取view的宽和高
-     * @param contentView
-     * @return
-     */
-    public static int[] getViewWidthAndHeight(View contentView) {
-        int[] result = new int[2];
-        if (contentView.getMeasuredHeight() == 0 || contentView.getMeasuredWidth() == 0) {
-            contentView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-            // 计算contentView的高宽
-            int windowHeight = contentView.getMeasuredHeight();
-            int windowWidth = contentView.getMeasuredWidth();
-            result[0] = windowWidth;
-            result[1] = windowHeight;
-        }
-        return result;
-    }
 
-    /**
-     * 设置控件margin单位 px
-     *
-     * @param v 控件
-     * @param l 左
-     * @param t 上
-     * @param r 右
-     * @param b 下
-     */
-    public static void setMargins(View v, int l, int t, int r, int b) {
-        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-            p.setMargins(l, t, r, b);
-            v.requestLayout();
-        }
-    }
 }

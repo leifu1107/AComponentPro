@@ -1,7 +1,7 @@
 package com.leifu.commonlib.utils;
 
 /**
- * Created by Administrator on 2017/1/22.
+ * 倒计时
  */
 
 import android.graphics.Color;

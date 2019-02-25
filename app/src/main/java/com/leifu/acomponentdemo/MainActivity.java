@@ -2,6 +2,7 @@ package com.leifu.acomponentdemo;
 
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.leifu.acomponentdemo.di.DaggerUtils;
 import com.leifu.acomponentdemo.presenter.MainPresenter;
@@ -12,7 +13,7 @@ import com.leifu.commonlib.base.RootActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-
+@Route(path = ARouteConstants.Main_MainActivity)
 public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View {
 
 

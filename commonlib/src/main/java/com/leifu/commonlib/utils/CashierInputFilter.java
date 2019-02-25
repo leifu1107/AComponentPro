@@ -8,14 +8,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by ShenBotao on 2017/7/17.
+ * 金额小数点过滤
  */
 
 public class CashierInputFilter implements InputFilter {
     Pattern mPattern;
 
     //输入的最大金额
-    private static final long MAX_VALUE = 10000 * 10000 * 10000l;
+    private static final long MAX_VALUE = 10000 * 10000 * 10000L;
     //小数点后的位数
     private static final int POINTER_LENGTH = 2;
 
