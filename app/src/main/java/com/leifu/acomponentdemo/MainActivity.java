@@ -44,6 +44,6 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @OnClick(R.id.btnGoModuleA)
     public void onViewClicked() {
-        ARouter.getInstance().build(ARouteConstants.A_MainActivity).navigation();
+        ARouter.getInstance().build(ARouteConstants.Test_TestActivity).navigation();
     }
 }

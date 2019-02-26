@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'android-aspectjx'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
@@ -39,12 +40,8 @@ android {
 
 dependencies {
 
-//    configurations {
-//        all*.exclude group: 'com.android.support', module: 'support-v13'
-//        all*.exclude group: 'com.google.dagger'
-//    }
     api fileTree(dir: 'libs', include: ['*.jar'])
-
+    api 'org.aspectj:aspectjrt:1.8.9'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

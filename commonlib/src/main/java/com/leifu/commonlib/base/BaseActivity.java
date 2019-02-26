@@ -1,5 +1,6 @@
 package com.leifu.commonlib.base;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.leifu.commonlib.permission.annotation.NeedPermission;
 import com.leifu.commonlib.utils.ActivityManager;
 
 import org.greenrobot.eventbus.EventBus;
@@ -37,7 +39,7 @@ public abstract class BaseActivity extends SupportActivity {
     public LinearLayout mTitleLayout;
     public TextView mRightText;
     public ImageView mBtnBack;
-//    public ImmersionBar mImmersionBar;
+    //    public ImmersionBar mImmersionBar;
     public Activity mActivity;
 
     @Override
@@ -56,23 +58,7 @@ public abstract class BaseActivity extends SupportActivity {
 
 
     protected void onViewCreated() {
-
     }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(EventBean eventBean) {
-    }
-
-    /**
-     * 粘性传值,如前面的activity传值到后面的activity
-     *
-     * @param eventBean
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
-    public void onStickyEvent(EventBean eventBean) {
-
-    }
-
 
     protected abstract int getLayout();
 
@@ -100,6 +86,27 @@ public abstract class BaseActivity extends SupportActivity {
 //        });
 //        mTitleLayout.setBackgroundResource(bgColor);
 //    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityManager.getInstance().removeActivity(this);
+        EventBus.getDefault().unregister(this);
+        mUnBinder.unbind();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(EventBean eventBean) {
+    }
+
+    /**
+     * 粘性传值,如前面的activity传值到后面的activity
+     *
+     * @param eventBean
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onStickyEvent(EventBean eventBean) {
+
+    }
 
 
     /**
@@ -140,11 +147,8 @@ public abstract class BaseActivity extends SupportActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ActivityManager.getInstance().removeActivity(this);
-        EventBus.getDefault().unregister(this);
-        mUnBinder.unbind();
-    }
+    protected void onResume() {
+        super.onResume();
 
+    }
 }
