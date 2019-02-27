@@ -2,7 +2,12 @@
 <resources>
     <attr name="pressedAlpha" format="float"/>
     <attr name="disabledAlpha" format="float"/>
-
+    <declare-styleable name="StatusBarHeightView">
+        <attr name="use_type" format="integer">
+            <enum name="use_height" value="0" />
+            <enum name="use_padding_top" value="1" />
+        </attr>
+    </declare-styleable>
     <declare-styleable name="TitleBarView">
         <!--是否沉浸式状态栏,默认true-->
         <attr name="title_immersible" format="boolean"/>

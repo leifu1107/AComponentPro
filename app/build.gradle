@@ -3,7 +3,6 @@ apply plugin: 'android-aspectjx'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -17,7 +16,9 @@ android {
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
-
+//        jackOptions {
+//            enabled=true
+//        }
         //添加了javaCompileOptions
         javaCompileOptions {
             annotationProcessorOptions {
