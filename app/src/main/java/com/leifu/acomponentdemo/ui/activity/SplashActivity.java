@@ -42,8 +42,9 @@ public class SplashActivity extends BaseActivity {
 //                mStartActivity(MainActivity.class);
 //                finish();
                 ArouterUtil.navigation(ARouteConstants.Main_MainActivity);
+                finish();
             }
-        }, 3000);
+        }, 1000);
     }
 
 }

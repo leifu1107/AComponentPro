@@ -7,17 +7,40 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.leifu.commonlib.view.titlebar.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ff0000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="bbb!"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="bbb!"
+                />
+        </LinearLayout>
+    </com.leifu.commonlib.view.titlebar.TitleBarView>
+
     <TextView
         android:id="@+id/btnGoModuleA"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:text="Hello World!"
+        android:text="hahha!"
         />
 
     <TextView
         android:id="@+id/view_main"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:text="Hello World!"
+        android:text="aaaa"
         />
 </LinearLayout>

@@ -9,12 +9,12 @@ import com.leifu.acomponentdemo.presenter.MainPresenter;
 import com.leifu.acomponentdemo.presenter.contract.MainContract;
 import com.leifu.commonlib.ARouteConstants;
 import com.leifu.commonlib.base.BaseBean;
-import com.leifu.commonlib.base.RootActivity;
+import com.leifu.commonlib.base.MVPActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 @Route(path = ARouteConstants.Main_MainActivity)
-public class MainActivity extends RootActivity<MainPresenter> implements MainContract.View {
+public class MainActivity extends MVPActivity<MainPresenter> implements MainContract.View {
 
 
     @BindView(R.id.btnGoModuleA)
@@ -37,7 +37,7 @@ public class MainActivity extends RootActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initEventAndData() {
-        super.initEventAndData();
+//        super.initEventAndData();
         mPresenter.getDatas();
     }
 
