@@ -1,6 +1,5 @@
 package com.leifu.commonlib.base;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.leifu.commonlib.permission.annotation.NeedPermission;
+import com.leifu.commonlib.R;
 import com.leifu.commonlib.utils.ActivityManager;
 
 import org.greenrobot.eventbus.EventBus;
@@ -71,21 +70,21 @@ public abstract class BaseActivity extends SupportActivity {
      * @param rightText   布局最右边文字
      * @param bgColor     整个头布局背景颜色
      */
-//    public void setTitleText(String centerTitle, String rightText, int bgColor) {
-//        mCenterTitle = (TextView) findViewById(R.id.centerTitle);
-//        mTitleLayout = (LinearLayout) findViewById(R.id.titleLayout);
-//        mRightText = (TextView) findViewById(R.id.rightText);
-//        mBtnBack = (ImageView) findViewById(R.id.btnback);
-//        mCenterTitle.setText(centerTitle);
-//        mRightText.setText(rightText);
-//        mBtnBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
-//        mTitleLayout.setBackgroundResource(bgColor);
-//    }
+    public void setTitleText(String centerTitle, String rightText, int bgColor) {
+        mCenterTitle = (TextView) findViewById(R.id.centerTitle);
+        mTitleLayout = (LinearLayout) findViewById(R.id.titleLayout);
+        mRightText = (TextView) findViewById(R.id.rightText);
+        mBtnBack = (ImageView) findViewById(R.id.btnBack);
+        mCenterTitle.setText(centerTitle);
+        mRightText.setText(rightText);
+        mBtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        mTitleLayout.setBackgroundResource(bgColor);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

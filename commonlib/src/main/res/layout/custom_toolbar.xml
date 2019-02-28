@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tool="http://schemas.android.com/tools"
+              android:id="@+id/titleLayout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#ffffff"
+              android:orientation="vertical">
+
+    <com.leifu.commonlib.view.titlebar.StatusBarHeightView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:use_type="use_height"></com.leifu.commonlib.view.titlebar.StatusBarHeightView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="19dp"
+            android:src="@drawable/btn_arrow_left_black"/>
+
+        <TextView
+            android:id="@+id/centerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tool:text="标题"/>
+
+
+        <TextView
+            android:id="@+id/rightText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingRight="19dp"
+            android:textColor="#666666"
+            tool:text="右边标题"/>
+    </RelativeLayout>
+
+</LinearLayout>

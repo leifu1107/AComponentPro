@@ -27,6 +27,7 @@ public class TestActivity extends BaseActivity {
     @Override
     protected void initEventAndData() {
         ToastUtil.shortShow("跳过来了");
+        setTitleText("中心","右边",0x00000000);
     }
 
     @PermissionDenied
