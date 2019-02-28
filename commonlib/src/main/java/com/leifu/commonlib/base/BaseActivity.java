@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.leifu.commonlib.R;
 import com.leifu.commonlib.utils.ActivityManager;
+import com.leifu.commonlib.view.titlebar.StatusBarUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -44,6 +45,8 @@ public abstract class BaseActivity extends SupportActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        StatusBarUtil.setStatusBarLightMode(this);
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(getLayout());
         mUnBinder = ButterKnife.bind(this);

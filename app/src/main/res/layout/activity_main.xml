@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
+<!--
     <com.leifu.commonlib.view.titlebar.TitleBarView
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -28,7 +28,7 @@
                 android:text="bbb!"
                 />
         </LinearLayout>
-    </com.leifu.commonlib.view.titlebar.TitleBarView>
+    </com.leifu.commonlib.view.titlebar.TitleBarView>-->
 
     <TextView
         android:id="@+id/btnGoModuleA"
