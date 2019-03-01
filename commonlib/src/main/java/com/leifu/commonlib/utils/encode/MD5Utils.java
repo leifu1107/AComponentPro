@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.leifu.commonlib.utils;
+package com.leifu.commonlib.utils.encode;
 
 import java.io.File;
 import java.io.FileInputStream;

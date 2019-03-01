@@ -13,8 +13,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * @Author: AriesHoo on 2018/7/19 9:50
- * @E-Mail: AriesHoo@126.com
  * Function: 状态栏工具类(状态栏文字颜色)
  * Description:
  * 1、修改状态栏黑白字 功能逻辑--参考 https://github.com/QMUI/QMUI_Android  QMUIStatusBarHelper类
@@ -33,6 +31,7 @@ public class StatusBarUtil {
      * @return
      */
     public static int setStatusBarLightMode(Activity activity) {
+        activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);//全屏显示状态栏
         int result = STATUS_BAR_TYPE_DEFAULT;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //MIUI 9版本开始状态栏文字颜色恢复为系统原生方案-为防止反复修改先进行6.0方案
@@ -55,6 +54,7 @@ public class StatusBarUtil {
      * @return
      */
     public static int setStatusBarDarkMode(Activity activity) {
+        activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);//全屏显示状态栏
         int result = STATUS_BAR_TYPE_DEFAULT;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //MIUI 9版本开始状态栏文字颜色恢复为系统原生方案-为防止反复修改先进行6.0方案

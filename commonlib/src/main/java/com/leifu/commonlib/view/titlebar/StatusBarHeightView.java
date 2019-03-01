@@ -60,8 +60,7 @@ public class StatusBarHeightView extends LinearLayout {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if (type == 0) {
-            setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
-                    statusBarHeight);
+            setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec), statusBarHeight);
         } else {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         }

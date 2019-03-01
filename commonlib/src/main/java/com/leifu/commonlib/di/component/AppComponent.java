@@ -1,10 +1,11 @@
 package com.leifu.commonlib.di.component;
 
 
-import com.leifu.commonlib.apis.Api;
+import com.leifu.commonlib.http.apis.Api;
 import com.leifu.commonlib.app.BaseApplication;
 import com.leifu.commonlib.di.module.AppModule;
 import com.leifu.commonlib.di.module.HttpModule;
+import com.leifu.commonlib.http.apis.OtherApi;
 
 import javax.inject.Singleton;
 
@@ -23,4 +24,6 @@ public interface AppComponent {
 //    RetrofitHelper getRetrofitHelper();
 
     Api getApis();
+
+    OtherApi getOtherApi();
 }

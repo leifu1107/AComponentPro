@@ -1,10 +1,10 @@
 package com.leifu.modulea.presenter;
 
-import com.leifu.commonlib.apis.Api;
+import com.leifu.commonlib.http.apis.Api;
 import com.leifu.commonlib.base.BaseBean;
 import com.leifu.commonlib.base.RxPresenter;
 import com.leifu.commonlib.base.RxUtil;
-import com.leifu.commonlib.exception.CommonSubscriber;
+import com.leifu.commonlib.http.exception.CommonSubscriber;
 import com.leifu.modulea.presenter.contract.MainContract;
 
 import javax.inject.Inject;

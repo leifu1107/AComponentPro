@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.leifu.commonlib">
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -7,8 +8,12 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application>
-        <activity android:name=".TestActivity"/>
+        <activity
+            android:name=".TestActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
         <activity android:name=".permission.PermissionRequestActivity"/>
     </application>
 </manifest>

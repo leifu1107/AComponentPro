@@ -1,6 +1,5 @@
 package com.leifu.acomponentdemo;
 
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -14,6 +13,7 @@ import com.leifu.commonlib.base.MVPActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
 @Route(path = ARouteConstants.Main_MainActivity)
 public class MainActivity extends MVPActivity<MainPresenter> implements MainContract.View {
 
@@ -23,7 +23,6 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
 
     @Override
     public void showContent(BaseBean baseBean) {
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //显示状态栏
 
     }
 
@@ -41,6 +40,7 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
     protected void initEventAndData() {
 //        super.initEventAndData();
         mPresenter.getDatas();
+        setTitleText("标题", "右边", R.color.colorPrimary);
     }
 
 

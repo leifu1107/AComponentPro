@@ -1,7 +1,8 @@
-package com.leifu.commonlib.exception;
+package com.leifu.commonlib.http.exception;
 
 
 import com.leifu.commonlib.base.BaseView;
+import com.leifu.commonlib.utils.Logger;
 import com.leifu.commonlib.utils.NetworkUtils;
 import com.leifu.commonlib.view.dialog.LoadingUtil;
 
@@ -95,6 +96,7 @@ public abstract class CommonSubscriber<T> extends ResourceSubscriber<T> {
             mView.showErrorMsg("服务器连接失败");
         } else {
             mView.showErrorMsg("未知错误");
+            Logger.e(e.toString());
 //            CrashReport.postCatchedException(e);//第三方bug收集
         }
     }

@@ -39,4 +39,5 @@ public class TestActivity extends BaseActivity {
     public void onPermissionCanceled(CancelBean bean) {
         ToastUtil.shortShow("权限取消");
     }
+
 }

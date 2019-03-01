@@ -1,4 +1,4 @@
-package com.leifu.commonlib.exception;
+package com.leifu.commonlib.http.exception;
 
 /**
  * 创建人:雷富

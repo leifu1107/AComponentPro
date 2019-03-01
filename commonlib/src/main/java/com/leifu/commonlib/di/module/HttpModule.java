@@ -3,10 +3,11 @@ package com.leifu.commonlib.di.module;
 
 import com.leifu.commonlib.BuildConfig;
 import com.leifu.commonlib.Constants;
-import com.leifu.commonlib.apis.Api;
-import com.leifu.commonlib.apis.OtherApi;
 import com.leifu.commonlib.di.qualifier.ApiUrl;
 import com.leifu.commonlib.di.qualifier.OtherApisUrl;
+import com.leifu.commonlib.http.apis.Api;
+import com.leifu.commonlib.http.apis.OtherApi;
+import com.leifu.commonlib.http.interceptor.HttpHeaderInterceptor;
 import com.leifu.commonlib.utils.Logger;
 import com.leifu.commonlib.utils.NetworkUtils;
 
@@ -151,6 +152,7 @@ public class HttpModule {
 //        };
 //
 //        builder.addInterceptor(apikey);
+        builder.addInterceptor(new HttpHeaderInterceptor());
         //-----------------日志拦截-------------------------
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {

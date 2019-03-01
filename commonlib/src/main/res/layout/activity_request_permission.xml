@@ -2,12 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@android:color/holo_red_dark">
+              android:background="#999"
+              android:orientation="vertical">
+
+
+    <include layout="@layout/custom_toolbar"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="哈哈哈哈"/>
 
-    <include layout="@layout/custom_toolbar"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
 </LinearLayout>

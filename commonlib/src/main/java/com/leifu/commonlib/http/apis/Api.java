@@ -1,4 +1,4 @@
-package com.leifu.commonlib.apis;
+package com.leifu.commonlib.http.apis;
 
 
 import com.leifu.commonlib.base.BaseBean;
@@ -12,7 +12,7 @@ import retrofit2.http.GET;
  * 描述:
  */
 
-public interface OtherApi {
+public interface Api {
     String HOST = "https://news-at.zhihu.com/";//正式环境
 
     //https://news-at.zhihu.com/api/4/news/latest
