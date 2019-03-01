@@ -13,6 +13,8 @@
     <application>
         <activity
             android:name=".TestActivity"
+            android:screenOrientation="nosensor"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
         <activity android:name=".permission.PermissionRequestActivity"/>
     </application>

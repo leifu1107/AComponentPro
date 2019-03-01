@@ -40,15 +40,14 @@ public abstract class BaseActivity extends SupportActivity {
     public LinearLayout mTitleLayout;
     public TextView mRightText;
     public ImageView mBtnBack;
-    //    public ImmersionBar mImmersionBar;
     public Activity mActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StatusBarUtil.setStatusBarLightMode(this);
-//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(getLayout());
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mUnBinder = ButterKnife.bind(this);
         mContext = this.getApplicationContext();
         mActivity = this;
@@ -88,6 +87,7 @@ public abstract class BaseActivity extends SupportActivity {
         });
         mTitleLayout.setBackgroundResource(bgColor);
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -148,6 +148,9 @@ public abstract class BaseActivity extends SupportActivity {
         return false;
     }
 
+    /**
+     * 沉浸式和键盘弹出布局整体上移的解决方案
+     */
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();

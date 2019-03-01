@@ -1,13 +1,22 @@
 package com.leifu.module_b;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.leifu.commonlib.ARouteConstants;
+import com.leifu.commonlib.base.BaseActivity;
+import com.leifu.commonlib.base.EventBean;
 
-public class MainActivity extends AppCompatActivity {
+import org.greenrobot.eventbus.EventBus;
+
+@Route(path = ARouteConstants.B_MainActivity)
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayout() {
+        return R.layout.b_activity_main;
+    }
+
+    @Override
+    protected void initEventAndData() {
+        EventBus.getDefault().post(new EventBean(1,"bbbbbbb"));
     }
 }

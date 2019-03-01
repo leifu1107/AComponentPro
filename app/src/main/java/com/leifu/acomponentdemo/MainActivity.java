@@ -9,7 +9,9 @@ import com.leifu.acomponentdemo.presenter.MainPresenter;
 import com.leifu.acomponentdemo.presenter.contract.MainContract;
 import com.leifu.commonlib.ARouteConstants;
 import com.leifu.commonlib.base.BaseBean;
+import com.leifu.commonlib.base.EventBean;
 import com.leifu.commonlib.base.MVPActivity;
+import com.leifu.commonlib.utils.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,13 +41,19 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
     @Override
     protected void initEventAndData() {
 //        super.initEventAndData();
-        mPresenter.getDatas();
+//        mPresenter.getDatas();
         setTitleText("标题", "右边", R.color.colorPrimary);
     }
 
 
     @OnClick(R.id.btnGoModuleA)
     public void onViewClicked() {
-        ARouter.getInstance().build(ARouteConstants.Test_TestActivity).navigation();
+        ARouter.getInstance().build(ARouteConstants.A_MainActivity).navigation();
+    }
+
+    @Override
+    public void onEvent(EventBean eventBean) {
+        super.onEvent(eventBean);
+        Logger.e("main----"+eventBean.toString());
     }
 }

@@ -12,4 +12,6 @@ public class ARouteConstants {
     public static final String Main_MainActivity = "/main/MainActivity";
     //获得A模块activity
     public static final String A_MainActivity = "/a/MainActivity";
+    //获得B模块activity
+    public static final String B_MainActivity = "/b/MainActivity";
 }
