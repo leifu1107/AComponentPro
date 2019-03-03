@@ -3,6 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center"
+              android:id="@+id/view_error"
               android:orientation="vertical">
 
     <LinearLayout
@@ -18,14 +19,23 @@
             android:src="@drawable/fragmentation_help"/>
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="34dp"
+            android:padding="5dp"
+            android:text="网络错误"
+            android:textSize="12sp"/>
+
+        <TextView
             android:id="@+id/reload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#999999"
             android:gravity="center"
-            android:minWidth="34dp"
-            android:text="暂无内容"
-            android:textSize="12sp"/>
-
+            android:padding="5dp"
+            android:text="点击重试"
+            android:textSize="15sp"/>
     </LinearLayout>
 </LinearLayout>

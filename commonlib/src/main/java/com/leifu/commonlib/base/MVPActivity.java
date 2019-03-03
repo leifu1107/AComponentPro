@@ -26,11 +26,12 @@ public abstract class MVPActivity<T extends BasePresenter> extends BaseActivity 
 
 
     @Override
-    protected void onViewCreated() {
+    public void onViewCreated() {
         super.onViewCreated();
         initInject();
         if (mPresenter != null)
             mPresenter.attachView(this);
+        findByIdMainView();
     }
 
     @Override
@@ -56,5 +57,11 @@ public abstract class MVPActivity<T extends BasePresenter> extends BaseActivity 
     }
 
 
-    protected abstract void initInject();
+    public abstract void initInject();
+    /**
+     * 查找布局id中main的view
+     */
+    public void findByIdMainView() {
+
+    }
 }

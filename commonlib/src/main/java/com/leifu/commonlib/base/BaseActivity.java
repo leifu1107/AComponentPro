@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.leifu.commonlib.R;
 import com.leifu.commonlib.utils.ActivityManager;
-import com.leifu.commonlib.view.titlebar.KeyboardConflictCompat;
 import com.leifu.commonlib.view.titlebar.StatusBarUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -34,7 +33,7 @@ import me.yokeyword.fragmentation.SupportActivity;
 public abstract class BaseActivity extends SupportActivity {
 
     public Context mContext;
-    private Unbinder mUnBinder;
+    public Unbinder mUnBinder;
 
     public TextView mCenterTitle;
     public LinearLayout mTitleLayout;
@@ -55,15 +54,20 @@ public abstract class BaseActivity extends SupportActivity {
         onViewCreated();
         ActivityManager.getInstance().addActivity(this);
         initEventAndData();
+        initEventAndDataAfter();
     }
 
+    public abstract int getLayout();
 
-    protected void onViewCreated() {
+
+    public void onViewCreated() {
     }
 
-    protected abstract int getLayout();
+    public abstract void initEventAndData();
 
-    protected abstract void initEventAndData();
+    public void initEventAndDataAfter() {
+    }
+
 
     /**
      * 设置布局标题头
@@ -85,7 +89,9 @@ public abstract class BaseActivity extends SupportActivity {
                 finish();
             }
         });
-        mTitleLayout.setBackgroundResource(bgColor);
+        if (bgColor != 0) {
+            mTitleLayout.setBackgroundResource(bgColor);
+        }
     }
 
     @Override
@@ -149,11 +155,11 @@ public abstract class BaseActivity extends SupportActivity {
     }
 
     /**
-     * 沉浸式和键盘弹出布局整体上移的解决方案
+     * 沉浸式和键盘弹出布局整体上移的解决方案,不建议放base里面
      */
-    @Override
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        KeyboardConflictCompat.assistWindow(getWindow());
-    }
+//    @Override
+//    public void onAttachedToWindow() {
+//        super.onAttachedToWindow();
+//        KeyboardConflictCompat.assistWindow(getWindow());
+//    }
 }

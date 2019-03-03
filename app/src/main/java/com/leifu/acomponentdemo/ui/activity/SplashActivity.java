@@ -17,12 +17,12 @@ import com.leifu.commonlib.utils.ArouterUtil;
 public class SplashActivity extends BaseActivity {
 
     @Override
-    protected int getLayout() {
+    public int getLayout() {
         return R.layout.activity_splash;
     }
 
     @Override
-    protected void initEventAndData() {
+    public void initEventAndData() {
         goNextActivity();
 //        ArouterUtil.navigation(ARouteConstants.Main_MainActivity);
     }
@@ -37,9 +37,9 @@ public class SplashActivity extends BaseActivity {
 //                    //跳转页面
 //                    mStartActivity(GuideActivty.class);
 //                } else {
-//                    mStartActivity(MainActivity.class);
+//                    mStartActivity(MainMainActivity.class);
 //                }
-//                mStartActivity(MainActivity.class);
+//                mStartActivity(MainMainActivity.class);
 //                finish();
                 ArouterUtil.navigation(ARouteConstants.Main_MainActivity);
                 finish();

@@ -46,7 +46,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
     }
 
     @Override
-    public void getDatas() {
+    public void getData() {
         addSubscribe(otherApi.loginRequest(new ParamMapTool()
                 .put("userCode", "18268180705")
                 .put("cid", "111")

@@ -27,11 +27,12 @@
             />
 
         <TextView
+            android:background="@color/colorAccent"
             android:id="@+id/view_main"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:text="aaaa"
+            android:text="mmmmmmaaaa"
             />
 
         <EditText

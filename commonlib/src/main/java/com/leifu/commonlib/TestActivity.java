@@ -19,13 +19,13 @@ import com.leifu.commonlib.utils.ToastUtil;
 @Route(path = ARouteConstants.Test_TestActivity)
 public class TestActivity extends BaseActivity {
     @Override
-    protected int getLayout() {
+    public int getLayout() {
         return R.layout.activity_request_permission;
     }
 
     @NeedPermission(value = {Manifest.permission.CALL_PHONE, Manifest.permission.CAMERA}, requestCode = 10)
     @Override
-    protected void initEventAndData() {
+    public void initEventAndData() {
         ToastUtil.shortShow("跳过来了");
         setTitleText("中心","右边",0x0000ff00);
     }

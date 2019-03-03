@@ -24,18 +24,19 @@ public class MainActivity extends MVPActivity<MainPresenter> implements MainCont
 
 
     @Override
-    protected int getLayout() {
-        return R.layout.a_activity_main;
+    public int getLayout() {
+        return R.layout.modulea_activity_main;
     }
 
     @Override
-    protected void initEventAndData() {
-        mPresenter.getDatas();
+    public void initEventAndData() {
+        setTitleText("a","",0);
+//        mPresenter.getDatas();
         mBtnModuleA.setText("ARouteConstants.A_MainActivity");
     }
 
     @Override
-    protected void initInject() {
+    public void initInject() {
         DaggerUtils.getActivityComponent(this).inject(this);
     }
 

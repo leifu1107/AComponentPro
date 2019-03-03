@@ -71,6 +71,7 @@ android {
 }
 
 dependencies {
+    api project(":commonlib")
     if (isBuildModule.toBoolean()) {
         //view
 //        annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {

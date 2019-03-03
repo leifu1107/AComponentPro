@@ -1,11 +1,10 @@
 apply from:"../common_component.gradle"
 
 android {
-    resourcePrefix "moduleA_" //给 Module 内的资源名增加前缀, 避免资源名冲突
+    resourcePrefix "modulea_" //给 Module 内的资源名增加前缀, 避免资源名冲突
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(":commonlib")
 }
 

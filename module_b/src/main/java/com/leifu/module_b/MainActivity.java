@@ -11,12 +11,14 @@ import org.greenrobot.eventbus.EventBus;
 public class MainActivity extends BaseActivity {
 
     @Override
-    protected int getLayout() {
-        return R.layout.b_activity_main;
+    public int getLayout() {
+        return R.layout.moduleb_activity_main;
     }
 
     @Override
-    protected void initEventAndData() {
+    public void initEventAndData() {
+        setTitleText("b","",0);
+
         EventBus.getDefault().post(new EventBean(1,"bbbbbbb"));
     }
 }

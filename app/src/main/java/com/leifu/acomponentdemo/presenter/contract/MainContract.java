@@ -15,6 +15,6 @@ public interface MainContract {
     }
 
     interface Presenter extends BasePresenter<View> {
-        void getDatas();
+        void getData();
     }
 }
