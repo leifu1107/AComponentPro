@@ -3,7 +3,7 @@ package com.leifu.acomponentdemo.di.component;
 import android.app.Activity;
 
 import com.leifu.acomponentdemo.MainActivity;
-import com.leifu.acomponentdemo.di.module.ActivityModule;
+import com.leifu.commonlib.di.module.ActivityModule;
 import com.leifu.commonlib.di.component.AppComponent;
 import com.leifu.commonlib.di.scope.ActivityScope;
 

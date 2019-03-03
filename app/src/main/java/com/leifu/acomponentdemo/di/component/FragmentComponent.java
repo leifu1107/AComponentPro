@@ -2,7 +2,7 @@ package com.leifu.acomponentdemo.di.component;
 
 import android.app.Activity;
 
-import com.leifu.acomponentdemo.di.module.FragmentModule;
+import com.leifu.commonlib.di.module.FragmentModule;
 import com.leifu.commonlib.di.component.AppComponent;
 import com.leifu.commonlib.di.scope.FragmentScope;
 

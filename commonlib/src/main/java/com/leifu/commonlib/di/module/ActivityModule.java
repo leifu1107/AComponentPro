@@ -1,4 +1,4 @@
-package com.leifu.acomponentdemo.di.module;
+package com.leifu.commonlib.di.module;
 
 import android.app.Activity;
 

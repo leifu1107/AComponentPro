@@ -5,7 +5,7 @@ import android.app.Activity;
 import com.leifu.acomponentdemo.App;
 import com.leifu.acomponentdemo.di.component.ActivityComponent;
 import com.leifu.acomponentdemo.di.component.DaggerActivityComponent;
-import com.leifu.acomponentdemo.di.module.ActivityModule;
+import com.leifu.commonlib.di.module.ActivityModule;
 
 
 /**
